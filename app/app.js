@@ -1,4 +1,4 @@
-'use strikt'
+'use strict'
 
 angular.module('app', [
 	'cardSearch'
