@@ -1,0 +1,11 @@
+<form class="search-form">
+	<input class="search-form__text-field" ng-model="searchQuery" ng-keyup="$ctrl.typeAhead(searchQuery)" type="text">
+	<input class="search-form__submit" type="submit">
+</form>
+<div class="serp">
+	<ul>
+		<li ng-repeat="card in $ctrl.data">
+			{{card.name}}
+		</li>
+	</ul>
+</div>

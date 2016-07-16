@@ -1,0 +1,21 @@
+{
+  "name": "mtg-comp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Aleksey Salion <lizardesan@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "angularjs#^1.5.7"
+  }
+}
