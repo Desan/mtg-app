@@ -1,11 +1,28 @@
-<form class="search-form">
-	<input class="search-form__text-field" ng-model="searchQuery" ng-keyup="$ctrl.typeAhead(searchQuery)" type="text">
-	<input class="search-form__submit" type="submit">
+
+<form>
+		<div class="input-field">
+		<input type="search" id="search" ng-model="searchQuery" ng-keyup="$ctrl.typeAhead(searchQuery)">
+		<label for="search"><i class="material-icons">search</i></label>
+		</div>
 </form>
-<div class="serp">
-	<ul>
+
+<div class="container">
+
+	<ul class="collapsible" data-collapsible="accordion">
 		<li ng-repeat="card in $ctrl.data">
-			{{card.name}}
+
+			<div class="collapsible-header">
+				<span>{{card.name}}</span>
+				<span class="mana-cost">
+					<i ng-repeat="symbol in $ctrl.convertManaSymbol(card.cost) track by $index" class="{{'mana-cost__symbol ms ms-'+symbol}}"></i>
+				</span>
+			</div>
+
+			<div class="collapsible-body">
+				<card-image card="card"></card-image>
+			</div>
+
 		</li>
 	</ul>
+
 </div>

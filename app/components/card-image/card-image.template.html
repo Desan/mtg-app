@@ -1,0 +1,9 @@
+<p>
+	<img ng-src="{{$ctrl.card.editions[0].image_url}}" alt="">
+	<div class="edition-symbols">
+		<a ng-repeat="edition in $ctrl.card.editions">
+			<i class="{{'ss ss-'+edition.set_id.toLowerCase()+' ss-'+edition.rarity.toLowerCase()}}"></i>
+		</a>
+	</div>
+	
+</p>

@@ -1,1 +1,1 @@
-angular.module('cardSearch', []);
+angular.module('cardSearch', ['cardImage']);
