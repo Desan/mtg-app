@@ -18,6 +18,9 @@
   "devDependencies": {
     "angular": "angularjs#^1.5.7",
     "Materialize": "materialize#^0.97.6",
-    "keyrune": "*"
+    "keyrune": "*",
+    "mana": "*",
+    "material-design-lite": "^1.1.3",
+    "material-design-icons": "^2.2.3"
   }
 }

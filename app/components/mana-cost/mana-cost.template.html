@@ -1,0 +1,4 @@
+<span class="mana-cost">
+	<span ng-repeat="symbol in $ctrl.convertManaSymbols($ctrl.cost) track by $index" 
+		  class="{{'mana-cost__symbol ms ms-cost ms-'+symbol}}"></span>
+</span>

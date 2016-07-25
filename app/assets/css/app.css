@@ -6,3 +6,13 @@
 
 .mana-cost__symbol {
   font-size: inherit; }
+
+.editions {
+  font-size: 1.6rem; }
+
+.editions__symbol--active {
+  border-radius: .125em; }
+
+.collapsible-body__inner {
+  padding: 1em; }
+

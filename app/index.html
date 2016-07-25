@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>Let's trade!</title>
+	<title>MTG</title>
 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css">
 	<link rel="stylesheet" href="lib/mana/css/mana.min.css">
 	<link rel="stylesheet" href="lib/keyrune/css/keyrune.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
 	<link rel="stylesheet" href="assets/css/app.css">
 
 	<script src="lib/angular/angular.min.js"></script>
@@ -17,9 +18,29 @@
 	<script src="components/card-search/card-search.component.js"></script>
 	<script src="components/card-image/card-image.module.js"></script>
 	<script src="components/card-image/card-image.component.js"></script>
+	<script src="components/mana-cost/mana-cost.module.js"></script>
+	<script src="components/mana-cost/mana-cost.component.js"></script>
 </head>
 <body>
-	<card-search></card-search>
+	
+	<!--<div class="preloader-wrapper big active">
+		<div class="spinner-layer spinner-blue-only">
+			<div class="circle-clipper left">
+				<div class="circle"></div>
+			</div>
+			<div class="gap-patch">
+				<div class="circle"></div>
+			</div>
+			<div class="circle-clipper right">
+				<div class="circle"></div>
+			</div>
+		</div>
+	</div>-->
+
+	<div class="container">
+		<card-search></card-search>
+	</div>
+	
 
 	<script src="lib/jquery/dist/jquery.min.js"></script>
 	<script src="lib/materialize/dist/js/materialize.min.js"></script>

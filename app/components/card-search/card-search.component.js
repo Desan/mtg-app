@@ -13,9 +13,10 @@ function cardSearch(http) {
 	var url = 'https://api.deckbrew.com/mtg/cards/typeahead';
 	var self = this;
 
+	// TODO: отрефакторить гет запрос в объект
 	this.typeAhead = function(query) {
 
-		if(query.length>3) {
+		if(query.length>2) {
 			http.get(url+'?q='+query).then(
 				function(responce) {
 					console.log(responce.data);
@@ -26,13 +27,5 @@ function cardSearch(http) {
 			});
 		}
 	};
-	// make conponent
-	this.convertManaSymbol = function(manaCost) {
-		return manaCost.split('}').map(function(a){
-			return a.slice(1).toLowerCase().replace('/', '')
-		}).filter(function(a) {
-			return !!a
-		})
-	}
 };
 

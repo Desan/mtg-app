@@ -1,9 +1,14 @@
-<p>
-	<img ng-src="{{$ctrl.card.editions[0].image_url}}" alt="">
-	<div class="edition-symbols">
-		<a ng-repeat="edition in $ctrl.card.editions">
-			<i class="{{'ss ss-'+edition.set_id.toLowerCase()+' ss-'+edition.rarity.toLowerCase()}}"></i>
-		</a>
-	</div>
-	
-</p>
+
+<img ng-src="{{$ctrl.card.editions[$ctrl.currentEdition].image_url}}" alt="">
+
+<div class="editions">
+
+	<a ng-click="$ctrl.setActiveEdition($index)" 
+	   ng-repeat="edition in $ctrl.card.editions">
+
+		<i class="editions__symbol ss ss-fw {{$ctrl.getEditionClass(edition)}} {{$ctrl.getRarityClass(edition)}}"
+		   ng-class="{ 'editions__symbol--active z-depth-1': $ctrl.isCurrent($index) }"></i>
+
+	</a>
+
+</div>

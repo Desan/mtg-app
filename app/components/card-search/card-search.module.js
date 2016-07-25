@@ -1,1 +1,1 @@
-angular.module('cardSearch', ['cardImage']);
+angular.module('cardSearch', ['cardImage', 'manaCost']);
