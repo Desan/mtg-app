@@ -20,7 +20,11 @@
     "Materialize": "materialize#^0.97.6",
     "keyrune": "*",
     "mana": "*",
-    "material-design-lite": "^1.1.3",
-    "material-design-icons": "^2.2.3"
+    "angular-sanitize": "^1.5.8"
+  },
+  "dependencies": {
+    "materialize": "^0.97.7",
+    "keyrune": "*",
+    "mana": "*"
   }
 }

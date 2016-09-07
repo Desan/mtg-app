@@ -1,0 +1,67 @@
+<li>
+<div class="collapsible-header">
+
+
+	<span><strong>{{$ctrl.card.name}}</strong></span>
+	<span ng-bind-html="$ctrl.card.cost | mtgParse:{mana: { classes: 'ms-cost mana-cost__symbol '}}" class="mana-cost"></span>
+
+
+</div>
+
+<div class="collapsible-body">
+	<div class="collapsible-body__inner">
+
+
+		<div class="row">
+
+			
+			<div class="col s12 m6 l7">
+
+				<div class="card-panel">
+					<span class="card-types">{{$ctrl.getFullCardType($ctrl.card)}}</span>
+				</div>
+
+				<div class="card-panel">					
+					<p ng-bind-html="$ctrl.card.text | mtgParse:{mana: { classes: 'ms-cost mana-cost__symbol '}}"></p>
+					<p class="pwr-tgh right-align"
+					   ng-show="$ctrl.card.power || $ctrl.card.toughness">{{$ctrl.card.power}} / {{$ctrl.card.toughness}}</p>
+				</div>
+
+				<div class="card-panel"
+				     ng-show="$ctrl.card.editions[$ctrl.currentEdition].flavor.length">
+
+					<p class="flavor-text" 
+					   ng-bind-html="$ctrl.card.editions[$ctrl.currentEdition].flavor | mtgParse"></p>
+
+				</div>
+
+				<div class="editions">
+					<a ng-click="$ctrl.setActiveEdition($index)" 
+					   ng-repeat="edition in $ctrl.card.editions">
+
+						<i class="editions__symbol ss ss-fw {{$ctrl.getEditionClass(edition)}} {{$ctrl.getRarityClass(edition)}}"
+						   ng-class="{ 'editions__symbol--active z-depth-1': $ctrl.isCurrent($index) }"></i>
+
+					</a>
+				</div>
+
+			</div>
+
+
+			<div class="col s12 m6 l5 hide-on-small-only">
+
+				<div class="card-image">
+					<img class="card-image__img" 
+					     ng-src="{{$ctrl.card.editions[$ctrl.currentEdition].image_url}}" 
+					     alt="">
+				</div>
+
+			</div>
+
+								
+		</div>
+
+		
+	</div>
+</div>
+</li>

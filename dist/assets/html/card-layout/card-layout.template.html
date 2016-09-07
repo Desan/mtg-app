@@ -1,0 +1,6 @@
+<ul class="collapsible" data-collapsible="accordion" ng-show="data.length">
+	<card-view ng-repeat="card in data | limitTo:maxItems" card="card"></card-view>
+	<div class="center-align">
+		<a href="" class="btn-flat" ng-click="maxItems = 20">View more...</a>
+	</div>
+</ul>

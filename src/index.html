@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app='app' lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>MTG</title>
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.min.js"></script>
+
+	<style type="text/css">
+		.ms-default:before { content: "\e904"; }
+	</style>
+	<!-- vendor:css-->
+	<!-- endinject -->
+	<!-- app:css -->
+	<!-- endinject -->
+</head>
+<body>
+
+	<div id="main-preloader" class="preloader-overlay valign-wrapper">
+		<div class="preloader-wrapper big active valign">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="blue-grey darken-2">
+		<div class="nav-wrapper">
+			<div class="brand-logo center"><img class="logo" src="assets/img/couple.svg" alt="">Magic Search</div>
+		</div>
+	</nav>
+	<!---->
+
+	<main>
+		<div class="container">
+			<div>
+				<card-search></card-search>
+			</div>
+			<div>
+				<card-layout></card-layout>
+			</div>
+			
+		</div>
+	</main>
+
+	
+	<footer class="page-footer blue-grey darken-2">
+		<div class="container">
+			<div class="disclaimer">
+				All trademarks, the pentagon of colors, the  W,  U,  B,  R,  G, and  T symbols, all expansion set names, card face and back designs, card names, card arts, card texts, and flavor texts are copyrighted property of Wizards of the Coast, Inc.
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2016 Aleksey Salion
+			</div>
+		</div>
+	</footer>
+
+	<!-- vendor:js -->
+	<!-- endinject -->
+	<!-- app:js -->
+	<!-- endinject -->
+</body>
+</html>
