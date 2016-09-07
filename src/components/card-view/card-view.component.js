@@ -48,7 +48,6 @@ function cardView($rootScope, $scope) {
 			return result = result.concat(superTypes, types, spitter, subTypes).join(' ');
 		}
 
-
 	}
 
 };

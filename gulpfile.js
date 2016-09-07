@@ -19,6 +19,7 @@ var gulp           = require('gulp'),
 var src = {
   root: './src',
   scss: ['./src/assets/scss/*.scss', '!./src/assets/scss/_*.scss'],
+  html: ['./src/**/*.html', '!./src/**/index.html'],
   index: './src/**/index.html',
   angular: {
     root: '/src/**/*.js',

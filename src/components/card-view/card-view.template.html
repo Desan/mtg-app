@@ -1,5 +1,6 @@
 <li>
-<div class="collapsible-header">
+<div class="collapsible-header"
+	 ng-click="tabIsOpen = true">
 
 
 	<span><strong>{{$ctrl.card.name}}</strong></span>
@@ -50,8 +51,9 @@
 
 			<div class="col s12 m6 l5 hide-on-small-only">
 
-				<div class="card-image">
-					<img class="card-image__img" 
+				<div class="card-image" >
+					<img class="card-image__img"
+						 ng-if="tabIsOpen"
 					     ng-src="{{$ctrl.card.editions[$ctrl.currentEdition].image_url}}" 
 					     alt="">
 				</div>

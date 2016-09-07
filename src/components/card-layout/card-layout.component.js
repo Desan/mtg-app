@@ -9,22 +9,30 @@ cardLayout.$inject = ['$scope', '$rootScope'];
 
 function cardLayout($scope, $rootScope) {
 
-	console.log('cardLayout init...');
+	$scope.data = [];
 
-	$scope.maxItems = 10;
+	$scope.layout = {
+		step: 25,
+		currentSize: 25,
+		expand: function() {
+			if (this.currentSize < $scope.data.length) { 
+				this.currentSize += this.step; 
+				console.log(this.currentSize);
+				console.log($scope.data.length);
+			}
+		},
+		isOver: function() {
+			console.log(this.currentSize <= $scope.data.length);
+			return this.currentSize < $scope.data.length
+		}
+	};
+
+	console.log($scope.layout);
 
 	$rootScope.$on('searchResponce', function(event, msg) {
 		$scope.data = msg;
-		angular.element('.collapsible').collapsible();
-		angular.element('.collapsible-header').click(function() {
-
-			var scrollTarget = angular.element('this');
-			console.log('scroll to: '+ scrollTarget);
-
-			$('html, body').stop().animate({
-				scrollTop: scrollTarget.offset().top
-		}, 2000);
-
-		})
+		$scope.maxItems = 25;
+		console.log($scope.data.length);
 	});
+
 }
