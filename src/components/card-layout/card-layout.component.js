@@ -17,12 +17,10 @@ function cardLayout($scope, $rootScope) {
 		expand: function() {
 			if (this.currentSize < $scope.data.length) { 
 				this.currentSize += this.step; 
-				console.log(this.currentSize);
-				console.log($scope.data.length);
+				angular.element('.collapsible').collapsible();
 			}
 		},
 		isOver: function() {
-			console.log(this.currentSize <= $scope.data.length);
 			return this.currentSize < $scope.data.length
 		}
 	};
