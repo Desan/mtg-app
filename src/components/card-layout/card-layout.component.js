@@ -16,8 +16,7 @@ function cardLayout($scope, $rootScope) {
 		currentSize: 25,
 		expand: function() {
 			if (this.currentSize < $scope.data.length) { 
-				this.currentSize += this.step; 
-				angular.element('.collapsible').collapsible();
+				this.currentSize += this.step;
 			}
 		},
 		isOver: function() {
@@ -29,7 +28,7 @@ function cardLayout($scope, $rootScope) {
 
 	$rootScope.$on('searchResponce', function(event, msg) {
 		$scope.data = msg;
-		$scope.maxItems = 25;
+		$('.collapsible').collapsible();
 		console.log($scope.data.length);
 	});
 
