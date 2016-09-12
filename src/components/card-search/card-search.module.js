@@ -1,1 +1,1 @@
-angular.module('cardSearch', ['ngSanitize']);
+angular.module('cardSearch', ['ngSanitize', 'searchFilter']);

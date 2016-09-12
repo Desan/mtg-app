@@ -1,0 +1,184 @@
+<div class="center-align">
+  <a class="modal-trigger btn-flat" href="#add-filters">ADD SEARCH FILTERS</a>
+</div>
+
+<div id="add-filters" class="modal modal-fixed-footer">
+
+  <!-- MODAL CONTENT: START -->
+	<div class="modal-content">
+
+    <!-- FILTER MENU: START -->
+		<h5>Filters</h5>
+		<div class="collection search-filters">
+
+			<a class="collection-item search-filters__item" href="#oracle-filter" >
+				Oracle Text
+				<span class="badge badge--rounded" ng-show="filter.oracle.length">
+          <i class="tiny material-icons">done</i>
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#set-filter">
+				Set
+				<span class="badge badge--rounded" ng-show="filter.set.length">
+          {{filter.set.length}}
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#format-filter">
+				Format
+				<span class="badge badge--rounded" ng-show="filter.format.length">
+          {{filter.format}}
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#type-filter">
+				Type
+				<span class="badge badge--rounded" ng-show="filter.type.length">
+          {{filter.type.length}}
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#sub-super-type-filter">
+				Subtype & Supertype
+				<span class="badge badge--rounded" ng-show="filter.subtype.length || filter.supertype.length">
+          {{filter.subtype.length + filter.supertype.length}}
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#color-filter">
+				Colors
+				<span class="badge badge--rounded" ng-show="filter.color.length">
+          {{filter.color.length}}
+        </span>
+			</a>
+
+			<a class="collection-item search-filters__item" href="#rarity-filter">
+				Rarity
+				<span class="badge badge--rounded" ng-show="filter.rarity.length">
+          {{filter.rarity.length}}
+        </span>
+			</a>
+
+		</div>
+    <!-- FILTER MENU: END -->
+
+    <!-- FILTER OPTIONS: START -->
+		<div class="search-filters__options">
+
+			<div id="oracle-filter" class="search-filters__body">
+				<div class="input-field">
+					<p>Oracle text:</p>
+					<input type="text" ng-model="filter.oracle">
+				</div>
+			</div>
+
+			<div id="set-filter" class="search-filters__body">
+				<input type="text" ng-model="setFilter">
+				<ul>
+					<li ng-repeat="set in $ctrl.filtersOptions.sets | filter:setFilter">
+						<p class="search-filters__list"
+						   ng-click="$ctrl.toggleSelection(filter.set, set.id)"
+						   ng-class="{ 'search-filters__list--isSelected': filter.set.indexOf(set.id) > -1}">
+							<span class="ss ss-fw ss-2x ss-{{set.id.toLowerCase()}}"></span>
+							{{set.name}}
+						</p>
+					</li>
+				</ul>
+			</div>
+
+			<div id="format-filter" class="search-filters__body">
+				<p ng-repeat="format in $ctrl.filtersOptions.formats">
+					<input name="formats" type="radio" id={{format}} value={{format}} ng-model="filter.format">
+					<label class="search-filters__label" for={{format}}>{{format}}</label>
+				</p>
+			</div>
+
+			<div id="type-filter" class="search-filters__body">
+				<ul>
+					<li ng-repeat="type in $ctrl.filtersOptions.types">
+						<p class="search-filters__list"
+						   ng-click="$ctrl.toggleSelection(filter.type, type)"
+						   ng-class="{ 'search-filters__list--isSelected': filter.type.indexOf(type) > -1}">
+							<span class="search-filters__type-icon ms ms-fw ms-2x ms-{{type.toLowerCase()}} ms-default"></span>
+							{{type}}
+						</p>
+					</li>
+				</ul>
+			</div>
+
+			<div id="sub-super-type-filter" class="search-filters__body">
+
+				<h5>Supertype</h5>
+				<ul>
+					<li class="search-filters__inline-list"
+						ng-repeat="supertype in $ctrl.filtersOptions.supertypes"
+						ng-click="$ctrl.toggleSelection(filter.supertype, supertype)"
+						ng-class="{ 'search-filters__list--isSelected': filter.supertype.indexOf(supertype) > -1}">
+						{{supertype}}
+					</li>
+				</ul>
+
+				<h5>Subtype</h5>
+				<ul>
+					<li class="search-filters__inline-list"
+						ng-repeat="subtype in $ctrl.filtersOptions.subtypes"
+						ng-click="$ctrl.toggleSelection(filter.subtype, subtype)"
+						ng-class="{ 'search-filters__list--isSelected': filter.subtype.indexOf(subtype) > -1}">
+						{{subtype}}
+					</li>
+				</ul>
+
+			</div>
+
+			<div id="color-filter" class="search-filters__body">
+				<ul class="center-align">
+					<li class="search-filters__mana-list"
+  						ng-repeat="color in $ctrl.filtersOptions.colors"
+  						ng-click="$ctrl.toggleSelection(filter.color, color)">
+						<span class="ms ms-fw ms-cost ms-3x"
+							  ng-class="{ 'ms-w': color === 'white',
+    							  			  'ms-u': color === 'blue',
+    							  			  'ms-b': color === 'black',
+    							  			  'ms-r': color === 'red',
+    							  			  'ms-g': color === 'green',
+    							  			  'search-filters__mana-list--isSelected': filter.color.indexOf(color) > -1 }">
+						</span>
+					</li>
+					<li>
+						<p>
+							<input id="multicolor" type="checkbox" ng-model="filter.multicolor">
+							<label for="multicolor">Only multicolored cards</label>
+						</p>
+					</li>
+				</ul>
+			</div>
+
+			<div id="rarity-filter" class="search-filters__body">
+				<ul>
+					<li ng-repeat="rarity in $ctrl.filtersOptions.rarity">
+						<p class="search-filters__list"
+						   ng-click="$ctrl.toggleSelection(filter.rarity, rarity)"
+						   ng-class="{ 'search-filters__list--isSelected': filter.rarity.indexOf(rarity) > -1}">
+							<span class="ss ss-fw ss-2x ss-bcore ss-{{rarity.toLowerCase()}}"></span>
+							{{rarity}}
+						</p>
+					</li>
+				</ul>
+			</div>
+			<a ></a>
+		</div>
+    <!-- FITER OPTIONS: END -->
+	</div>
+  <!-- MODAL CONTENT: END -->
+
+	<div class="modal-footer">
+		<a id="close-filter"
+		   class="modal-action modal-close waves-effect waves-green btn-flat"
+		   ng-click="$ctrl.applyFilter(filter)"> <i class="material-icons">done</i></a>
+		<a id="reset-filter"
+		   class="btn-flat"
+		   ng-click="$ctrl.resetFilters()"><i class="material-icons">delete</i></a>
+		<a id="back-filter" class="btn-flat"><i class="material-icons left">arrow_back</i></a>
+	</div>
+</div>
