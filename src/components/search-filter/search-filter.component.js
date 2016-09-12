@@ -1,7 +1,7 @@
 angular.module('searchFilter').component('searchFilter', {
   templateUrl: 'assets/html/search-filter/search-filter.template.html',
   controller: searchFilter
-})
+});
 
 searchFilter.$inject = ['$scope', 'deckbrewAPI'];
 
