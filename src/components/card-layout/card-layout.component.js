@@ -15,7 +15,7 @@ function cardLayout($scope, $rootScope) {
 		step: 25,
 		currentSize: 25,
 		expand: function() {
-			if (this.currentSize < $scope.data.length) { 
+			if (this.currentSize < $scope.data.length) {
 				this.currentSize += this.step;
 			}
 		},
@@ -24,12 +24,10 @@ function cardLayout($scope, $rootScope) {
 		}
 	};
 
-	console.log($scope.layout);
 
 	$rootScope.$on('searchResponce', function(event, msg) {
 		$scope.data = msg;
 		$('.collapsible').collapsible();
-		console.log($scope.data.length);
 	});
 
 }
